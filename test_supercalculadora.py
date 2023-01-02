@@ -18,5 +18,8 @@ class TestsSupercalculadora( unittest.TestCase):
     def test_sumar_propiedad_conmutativa(self):
         self.failUnlessEqual(self.calc.sumar(5, 7), self.calc.sumar(7, 5))
 
+    def test_restar_5_y_3( self):
+        self.failUnlessEqual(2, self.calc.restar(5, 3))
+
 if __name__ == "__main__":
     unittest.main()
