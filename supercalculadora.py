@@ -3,4 +3,4 @@ class Supercalculadora:
         return a + b
 
     def restar( self, a, b):
-        return 2
+        return a - b
