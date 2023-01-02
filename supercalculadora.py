@@ -1,3 +1,3 @@
 class Supercalculadora:
     def sumar( self, a, b):
-        return 12
+        return a + b
