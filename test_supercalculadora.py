@@ -1,12 +1,17 @@
 import unittest
+import supercalculadora
 import test_calculadora
 import test_expr_aritmetica
+import expr_aritmetica
 
 
-if __name__ == "__main__":
-    suite = unittest.TestSuite()
-    suite.addTest(unittest.makeSuite(test_calculadora.TestsCalculadora))
-    
-    suite.addTest(unittest.makeSuite(test_expr_aritmetica.TestsExprAritmetica))
+class TestsSupercalculadora(unittest.TestCase):
 
-    unittest.TextTestRunner(verbosity=3).run(suite)
+    def setUp(self) -> None:
+        self.sc = supercalculadora.Supercalculadora(expr_aritmetica.ExprAritmetica())
+
+    def test_sumar(self):
+        self.failUnlessEqual("4", self.sc.calcular("2 + 2"))
+
+    def test_resta(self):
+        self.failUnlessEqual("0", self.sc.calcular("2 - 2"))
